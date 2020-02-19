@@ -127,9 +127,12 @@
     padding-bottom: 2.5%;
 }
 
+#yellow .firstColumn {
+    width: 5%;
+}
+
 #yellow td {
-    border: 0;
-    width: 14%;
+    border: 1px;
     height: 18px;
     padding-top: 2px;
     padding-bottom: 2px;
