@@ -4,6 +4,7 @@
     --color3:   #bbbbbb;
     --color4:   #eeeeee;
     --color5:   #ffcccc;
+    --color6:   #ffffcc;
     --colYes:   #88ff88;
     --colNo:    #ff8888;
 }
@@ -12,57 +13,124 @@
     background-color: var(--color5);
 }
 
-.form {
+#red .form {
     background-color: var(--color4);
 }
 
-.data .Yes {
+#red .data .Yes {
     background-color: var(--colYes);
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
 }
 
-.data .No {
+#red .data .No {
     background-color: var(--colNo);
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
 }
 
-.data table, .data .data {
+#red .data table, #red .data .data {
     border: 0.1px solid #000000;
 }
 
-.data .blockLine {
+#red .data .blockLine {
     border: 1px solid black;
     background-color: var(--color3);
 }
 
-.data .upperBlockLine {
+#red .data .upperBlockLine {
     border-top: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
     background-color: var(--color3);
 }
 
-.data .centerBlockLine {
+#red .data .centerBlockLine {
     border: 1px solid #000000;
     border-top: 1px solid #00000000;
     border-bottom: none;
     background-color: var(--color3);
 }
 
-.data .lowerBlockLine {
+#red .data .lowerBlockLine {
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
     background-color: var(--color3);
 }
 
-.data .Numbering {
+#red .data .Numbering {
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
     background-color: var(--color2);
+}
+
+#red .scroll {
+    overflow-x: auto;
+    overflow-y: none;
+    margin: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+#yellow {
+    background-color: var(--color6);
+}
+
+#yellow .form {
+    background-color: var(--color4);
+}
+
+#yellow .data table, #yellow .data .data {
+    border: 1px solid #000000;
+}
+
+#yellow .data .blockLine {
+    border: 1px solid black;
+    background-color: var(--color3);
+}
+
+#yellow .data .upperBlockLine {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#yellow .data .centerBlockLine {
+    border: 1px solid #000000;
+    border-top: 1px solid #00000000;
+    border-bottom: none;
+    background-color: var(--color3);
+}
+
+#yellow .data .lowerBlockLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#yellow .data .Numbering {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color2);
+}
+
+#yellow .scroll {
+    overflow-x: auto;
+    overflow-y: none;
+    margin: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+#yellow td {
+    border: 0;
+    width: 14%;
+    height: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
