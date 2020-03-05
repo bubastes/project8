@@ -68,7 +68,7 @@
     background-color: var(--color2);
 }
 
-#red .scroll {
+.scroll {
     overflow-x: auto;
     overflow-y: none;
     margin: 2.5%;
@@ -112,8 +112,40 @@
     border-right: 1px solid #000000;
     background-color: var(--color3);
 }
+#red .form .blockLine {
+    border: 1px solid black;
+    background-color: var(--color3);
+}
 
-#yellow .data .Numbering {
+#red .form .upperLine {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .form .leftLine {
+    border: 1px solid #000000;
+    border-top: 1px solid #00000000;
+    border-bottom: none;
+    background-color: var(--color3);
+}
+
+#red .form .lowerLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .form .rightLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .data .Numbering {
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
@@ -141,4 +173,28 @@
 
 .box {
     border: 1px;
+}
+
+.empty_space {
+    height: 300px;
+}
+
+#yellow .form .blockLine {
+    border: 1px solid black;
+}
+
+#yellow .form .upperLine {
+    border-top: 1px solid #000000;
+}
+
+#yellow .form .leftLine {
+    border-left: 1px solid #000000;
+}
+
+#yellow .form .lowerLine {
+    border-bottom: 1px solid #000000;
+}
+
+#yellow .form .rightLine {
+    border-right: 1px solid #000000;
 }

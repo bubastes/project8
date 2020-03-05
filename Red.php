@@ -1,5 +1,65 @@
 <?php
-    echo("<h0.5>stuff happened</h0.5>");
+    // PHP always on top of the page
+    // A function to save an array to a file
+    // @Parameter: $p_aSavedArray
+    // Type: array
+    // Description: The array to be saved to a file
+    function SaveArray($p_aSavedArray) {
+        // Use JSON to encode the array into a storeable string
+        $aJSONArray = json_encode($p_aSavedArray);
+
+        // Open the file in 'write' modus
+        $file = fopen('database.json','w');    
+
+        // Save the content of the JSON array into the file
+        file_put_contents('database.json', $aJSONArray);  
+
+        // Close the file
+        fclose($file);
+    }
+
+    // A function to load an array from a file
+    // @ Parameter: none
+    function LoadArray()
+    {
+        // Open the file in 'read' modus
+        $file = fopen('database.json','r');
+
+        // Read the JSON array from the file
+        $aJSONArray = file_get_contents('database.json');  
+
+        // Convert to JSON array back to a PHP array
+        $aReadArray = json_decode($aJSONArray,TRUE);
+
+        // Close the file again            
+        fclose($file);
+
+        // send the loaded data to the main
+        return($aReadArray);
+
+        // Dump the content of the array on the screen
+        // var_dump($aReadArray);
+
+    }
+
+    if(!empty($_POST)){
+        $iOpdrachtNummer            = $_POST['iOpdrachtNummer'];
+        $iTCTV_Number               = $_POST['iTCTV_Number'];
+        $dDate                      = $_POST['dDate'];
+        $sUitgevoerd                = $_POST['sUitgevoerd'];
+        $sDeskundige                = $_POST['sDeskundige'];
+        $dAfmeldenVoor              = $_POST['dAfmeldenVoor'];
+        $sDirecte_voorzieningen     = $_POST['sDirecte_voorzieningen'];
+        $sDirecte_voorzieningen     = $_POST['sToelichting'];
+        
+        // load the database
+        $aDatabase = LoadArray();
+        $iRecordCounter = count($aDatabase);
+        // 
+        $aDatabase[$iRecordCounter] = array($$iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$dAfmeldenVoor,$sDirecte_voorzieningen,$sDirecte_voorzieningen);
+        // save the array to a file
+        SaveArray($aDatabase);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -95,106 +155,59 @@
                     </tr>
                     <tr>
                         <!--section 3-->
-                        <td class="lowerBlockLine">m</td>                      <!--gieklengte hoofdgiek m-->
-                        <td class="lowerBlockLine">m</td>                      <!--gieklengte mechanische sectie m-->
-                        <td class="lowerBlockLine">m</td>                      <!--gieklengte hulpgiek m-->
-                        <td class="lowerBlockLine">m</td>                      <!--gieklengte totale gieklengte m-->
-                        <td class="lowerBlockLine">gr</td>                     <!--giekhoek hoofdgiek gr-->
-                        <td class="lowerBlockLine">gr</td>                     <!--giekhoek hulpgiek gr-->
-                        <td class="lowerBlockLine">t</td>                      <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="lowerBlockLine">m</td>                      <!--beproeving proeflast m-->
-                        <td class="lowerBlockLine">t</td>                      <!--beproeving afwijzing in % m-->
+                        <td class="lowerBlockLine">m</td>                                           <!--gieklengte hoofdgiek m-->
+                        <td class="lowerBlockLine">m</td>                                           <!--gieklengte mechanische sectie m-->
+                        <td class="lowerBlockLine">m</td>                                           <!--gieklengte hulpgiek m-->
+                        <td class="lowerBlockLine">m</td>                                           <!--gieklengte totale gieklengte m-->
+                        <td class="lowerBlockLine">gr</td>                                          <!--giekhoek hoofdgiek gr-->
+                        <td class="lowerBlockLine">gr</td>                                          <!--giekhoek hulpgiek gr-->
+                        <td class="lowerBlockLine">t</td>                                           <!--zwenkhoek eigen massa balast LMB code t-->
+                        <td class="lowerBlockLine">m</td>                                           <!--beproeving proeflast m-->
+                        <td class="lowerBlockLine">t</td>                                           <!--beproeving afwijzing in % m-->
                     </tr>
                     <!--row number 1-->
                     <tr class="Numbering">
-                        <th class="Numbering"id="place1">1</th>                 <!--ranking-->
-                        <td class="data" id="1.1">#</td>                        <!--opgesteld op: banden-->
-                        <td class="data" id="1.2">#</td>                        <!--opgesteld op: stempels-->
-                        <td class="data" id="1.3">#</td>                        <!--opgesteld op: rupsen-->
-                        <td class="data" id="1.4">#</td>                        <!--gieklengte hoofdgiek-->
-                        <td class="data" id="1.5">#</td>                        <!--gieklengte mechanische sectie-->
-                        <td class="data" id="1.6">#</td>                        <!--gieklengte hulpgiek-->
-                        <td class="data" id="1.7">#</td>                        <!--gieklengte totale gieklengte-->
-                        <td class="data" id="1.8">#</td>                        <!--giekhoek hoofdgiek-->
-                        <td class="data" id="1.9">#</td>                        <!--giekhoek hulpgiek-->
-                        <td class="data" id="1.10">#</td>                       <!--giekhoek aantal hijskabels-->
-                        <td class="data" id="1.11">#</td>                       <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
-                        <td class="data" id="1.12">#</td>                       <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="data" id="1.13">#</td>                       <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
-                        <td class="data" id="1.14">#</td>                       <!--zwenkhoek LMB treedt in werking bij:-->
-                        <td class="data" id="1.15">#</td>                       <!--beproeving proeflast-->
-                        <td class="data" id="1.16">#</td>                       <!--beproeving afwijking in %-->
-                        <td class="data" id="1.17">#</td>                       <!--akkoord ja-->
-                        <td class="data" id="1.18">#</td>                       <!--akkoord nee-->
+                        <th class="Numbering"id="place1">1</th>                                     <!--ranking-->
+                        <td class="data" id="1.1">#</td>                                            <!--opgesteld op: banden-->
+                        <td class="data" id="1.2">#</td>                                            <!--opgesteld op: stempels-->
+                        <td class="data" id="1.3">#</td>                                            <!--opgesteld op: rupsen-->
+                        <td class="data" id="1.4">#</td>                                            <!--gieklengte hoofdgiek-->
+                        <td class="data" id="1.5">#</td>                                            <!--gieklengte mechanische sectie-->
+                        <td class="data" id="1.6">#</td>                                            <!--gieklengte hulpgiek-->
+                        <td class="data" id="1.7">#</td>                                            <!--gieklengte totale gieklengte-->
+                        <td class="data" id="1.8">#</td>                                            <!--giekhoek hoofdgiek-->
+                        <td class="data" id="1.9">#</td>                                            <!--giekhoek hulpgiek-->
+                        <td class="data" id="1.10">#</td>                                           <!--giekhoek aantal hijskabels-->
+                        <td class="data" id="1.11">#</td>                                           <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
+                        <td class="data" id="1.12">#</td>                                           <!--zwenkhoek eigen massa balast LMB code t-->
+                        <td class="data" id="1.13">#</td>                                           <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
+                        <td class="data" id="1.14">#</td>                                           <!--zwenkhoek LMB treedt in werking bij:-->
+                        <td class="data" id="1.15">#</td>                                           <!--beproeving proeflast-->
+                        <td class="data" id="1.16">#</td>                                           <!--beproeving afwijking in %-->
+                        <td class="data" id="1.17">#</td>                                           <!--akkoord ja-->
+                        <td class="data" id="1.18">#</td>                                           <!--akkoord nee-->
                     </tr>
                     <!--row number 2-->
-                    <tr class="Numbering">
-                        <th class="Numbering"id="place2">2</th>                 <!--ranking-->
-                        <td class="data" id="2.1">#</td>                        <!--opgesteld op: banden-->
-                        <td class="data" id="2.2">#</td>                        <!--opgesteld op: stempels-->
-                        <td class="data" id="2.3">#</td>                        <!--opgesteld op: rupsen-->
-                        <td class="data" id="2.4">#</td>                        <!--gieklengte hoofdgiek-->
-                        <td class="data" id="2.5">#</td>                        <!--gieklengte mechanische sectie-->
-                        <td class="data" id="2.6">#</td>                        <!--gieklengte hulpgiek-->
-                        <td class="data" id="2.7">#</td>                        <!--gieklengte totale gieklengte-->
-                        <td class="data" id="2.8">#</td>                        <!--giekhoek hoofdgiek-->
-                        <td class="data" id="2.9">#</td>                        <!--giekhoek hulpgiek-->
-                        <td class="data" id="2.10">#</td>                       <!--giekhoek aantal hijskabels-->
-                        <td class="data" id="2.11">#</td>                       <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
-                        <td class="data" id="2.12">#</td>                       <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="data" id="2.13">#</td>                       <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
-                        <td class="data" id="2.14">#</td>                       <!--zwenkhoek LMB treedt in werking bij:-->
-                        <td class="data" id="2.15">#</td>                       <!--beproeving proeflast-->
-                        <td class="data" id="2.16">#</td>                       <!--beproeving afwijking in %-->
-                        <td class="data" id="2.17">#</td>                       <!--akkoord ja-->
-                        <td class="data" id="2.18">#</td>                       <!--akkoord nee-->
-                    </tr>
-                    <!--row number 3-->
-                    <tr class="Numbering">
-                        <th class="Numbering"id="place3">3</th>                 <!--ranking-->
-                        <td class="data" id="3.1">#</td>                        <!--opgesteld op: banden-->
-                        <td class="data" id="3.2">#</td>                        <!--opgesteld op: stempels-->
-                        <td class="data" id="3.3">#</td>                        <!--opgesteld op: rupsen-->
-                        <td class="data" id="3.4">#</td>                        <!--gieklengte hoofdgiek-->
-                        <td class="data" id="3.5">#</td>                        <!--gieklengte mechanische sectie-->
-                        <td class="data" id="3.6">#</td>                        <!--gieklengte hulpgiek-->
-                        <td class="data" id="3.7">#</td>                        <!--gieklengte totale gieklengte-->
-                        <td class="data" id="3.8">#</td>                        <!--giekhoek hoofdgiek-->
-                        <td class="data" id="3.9">#</td>                        <!--giekhoek hulpgiek-->
-                        <td class="data" id="3.10">#</td>                       <!--giekhoek aantal hijskabels-->
-                        <td class="data" id="3.11">#</td>                       <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
-                        <td class="data" id="3.12">#</td>                       <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="data" id="3.13">#</td>                       <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
-                        <td class="data" id="3.14">#</td>                       <!--zwenkhoek LMB treedt in werking bij:-->
-                        <td class="data" id="3.15">#</td>                       <!--beproeving proeflast-->
-                        <td class="data" id="3.16">#</td>                       <!--beproeving afwijking in %-->
-                        <td class="data" id="3.17">#</td>                       <!--akkoord ja-->
-                        <td class="data" id="3.18">#</td>                       <!--akkoord nee-->
-                    </tr>
-                    <!--row number 4-->
-                    <tr class="Numbering">
-                        <th class="Numbering"id="place4">4</th>                 <!--ranking-->
-                        <td class="data" id="4.1">#</td>                        <!--opgesteld op: banden-->
-                        <td class="data" id="4.2">#</td>                        <!--opgesteld op: stempels-->
-                        <td class="data" id="4.3">#</td>                        <!--opgesteld op: rupsen-->
-                        <td class="data" id="4.4">#</td>                        <!--gieklengte hoofdgiek-->
-                        <td class="data" id="4.5">#</td>                        <!--gieklengte mechanische sectie-->
-                        <td class="data" id="4.6">#</td>                        <!--gieklengte hulpgiek-->
-                        <td class="data" id="4.7">#</td>                        <!--gieklengte totale gieklengte-->
-                        <td class="data" id="4.8">#</td>                        <!--giekhoek hoofdgiek-->
-                        <td class="data" id="4.9">#</td>                        <!--giekhoek hulpgiek-->
-                        <td class="data" id="4.10">#</td>                       <!--giekhoek aantal hijskabels-->
-                        <td class="data" id="4.11">#</td>                       <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
-                        <td class="data" id="4.12">#</td>                       <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="data" id="4.13">#</td>                       <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
-                        <td class="data" id="4.14">#</td>                       <!--zwenkhoek LMB treedt in werking bij:-->
-                        <td class="data" id="4.15">#</td>                       <!--beproeving proeflast-->
-                        <td class="data" id="4.16">#</td>                       <!--beproeving afwijking in %-->
-                        <td class="data" id="4.17">#</td>                       <!--akkoord ja-->
-                        <td class="data" id="4.18">#</td>                       <!--akkoord nee-->
-                    </tr>
-                </table>
-            </div>
+                    <?php                                                                           //php database input
+                        if(file_exists('database.json')) {                                          //if the database exists
+                            $aDatabase = LoadArray();                                               //load the database
+                            // loop thru the complex array                      
+                            foreach($aDatabase as $iKey =>$aContentArray) {                         //execute the following for every entry in the database
+                                echo("<tr><td class='data'>$iKey</td>           
+                                    <td class='data'>.$aContentArray[0].</td>
+                                    <td class='data'>.$aContentArray[1].</td>
+                                    <td class='data'>.$aContentArray[2].</td>
+                                    <td class='data'>.$aContentArray[3].</td>
+                                    <td class='data'>.$aContentArray[4].</td>
+                                    <td class='data'>.$aContentArray[5].</td>
+                                    <td class='data'>.$aContentArray[6].</td>
+                                    <td class='data'>.$aContentArray[7].</td>
+                                    </tr>");                                                        //input the content of the database entry into a row
+                            }
+                        }
+                    ?>                                                                              <!--end of the php part-->
+                </table>                                                                            <!--end of the table-->
+            </div>                                                                                  <!--end of the div-->
             <!--end of the table on the page-->
         </div>
     </body>
