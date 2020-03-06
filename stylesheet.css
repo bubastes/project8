@@ -198,3 +198,39 @@
 #yellow .form .rightLine {
     border-right: 1px solid #000000;
 }
+
+table, tr, td{
+    border-color: black;
+}
+th{
+    border-top : 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.the-world{
+    background-color: lightsteelblue;
+}
+
+#navbar {
+    width: 101%;
+    height: 13.5%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--aColor6);
+    margin-bottom: 10px;
+    z-index: 5;
+}
+
+#navbar a {
+    height: 50%;
+    color: var(--aColor1);
+}
+
+#navbar a:hover {
+    color: var(--aColor1);
+}
+
+#navbar #selected {
+    background-color: var(--aColor4)
+}
