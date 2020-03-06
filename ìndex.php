@@ -159,8 +159,148 @@ date last change:	5-3-2020
         </div>
     </div>
     <div padding="0px" margin="0px" style="width:5%;"></div>
-    <div id="yellow" padding="0px" margin="0px" style="width:48.5%;">
+    <div id="yellow" padding="0px" margin="0px" style="width:48.5%;"><nav> <!--this is the start of the nav bar -->
+            <div class="col-2">
+                <tr>
+                    <img src="./images/Capture.JPG" width="10%"><br>
+                <td><a href="./">bestanden</a></td>
+                <td><a href="./">info</a></td>
+            </div>
+         <table width="47%">
+                <td><div class="col-2" align="right" width="47%">hijstabel</div></td>
+            </tr>
+        </table>
+    </nav><!--The end of the nav bar -->
+        <div class="form">
+            <table width="47%">
+            <tr>
+               <td><h1>Kabelchecklist</h1></td>
+                <td align="right"><b>Opdrachtnummer:</b> <input type="number"></td><!--search bar-->
+                </tr>
+            </table><!--Start of the table where the data is at-->
+            <table cellspacing="0">
+                <tr style="background-color: lightsteelblue;" >
+                    <th colspan="2">zichtbare <br> draadbreuk <br>
+                    </th>
+                    <th><h3><b>afslipping<br> van de aan <br>de <br> buitenzijde <br> gelegen <br>draden</b></h3></th>
+                    <th><h3><b>Roest en <br> corrosie</b></h3></th>
+                    <th><h3><b>verminderde <br>kabeldiameter</b></h3></th>
+                    <th rowspan="2"><h3><b>positie<br> van de<br> meetpunten</b></h3></th>
+                    <th><h3><b>totale <br> beoordeling</b></h3></th>
+                    <th><h3><b>beschadeging<br> en<br> vervorming</b></h3></th>
+                </tr>
+                <tr style="background-color: lightsteelblue;">
+                    <th>aantal<br> met<br> een<br> lengte</th>
+                    <th>aantal<br> met <br> een<br> lengte</th>
+                    <th>mate van<br> beschadeging</th>
+                    <th> mate van<br> beschadeging </th>
+                    <th> % </th>
+                    <th>mate van<br> beschadeging </th>
+                    <th> Type</th>
 
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                    <th> w</th>
+                </tr>
+                <tr >
+                    <th colspan="2" class="the-world">Datum:</th>
+                    <th colspan="2"></th>
+                    <th colspan="2" class="the-world">handtekening:</th>
+                    <th colspan="2"></th>
+                </tr>
+                <tr >
+                    <th colspan="2" class="the-world">Kabel leverancier:</th>
+                    <th colspan="2"></th>
+                    <th colspan="2" class="the-world">aantal bedrijfsuren:</th>
+                    <th colspan="2"></th>
+                </tr>
+                <tr >
+                    <th colspan="2" class="the-world">overige<br> waarnemingen:</th>
+                    <th colspan="2"></th>
+                    <th colspan="2" class="the-world">reden voor het<br> afleggen:</th>
+                    <th colspan="2"></th>
+                </tr>
+
+
+            </table><!--End of the table-->
+        </div>
     </div>
     <div padding="0px" margin="0px" style="width:5%;"></div>
 </body>
