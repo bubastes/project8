@@ -220,6 +220,49 @@
                     <tr>
                         <td class="empty_space"></td>
                     </tr>
+                    <!--start of the eigenaar section-->
+                    <div >
+                        <tr>
+                            <th align="left" class="upperLine leftLine lowerLine" rowspan="4">Eigenaar</th>
+                            <td class="upperLine">naam</td>
+                            <td colspan="6" class="upperLine"><textarea type="text" cols="100" rows="1"></textarea></td>
+                            <td rowspan="4" class="rightLine upperLine lowerLine"></td>
+                        </tr>
+                        <tr>
+                            <td>Adres:</td>
+                            <td colspan="6"><textarea type="text" cols="100" rows="1"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td>Postcode/ plaats:</td>
+                            <td padding="-20"><textarea type="text" rows="1"></textarea> </td>
+                            <td colspan="6"><textarea type="text" cols="70" rows="1"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td class="lowerLine">telefoonnummer:</td>
+                            <td colspan="6" class="lowerLine"><textarea type="text"  rows="1"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </div>
+                    <!--end of this section-->
+                    <div>
+                        <tr>
+                            <th class="lowerLine leftLine upperLine" align="left" rowspan="2">opdrachtgever</th>
+                            <td class="upperLine">Bedrijf:</td>
+                            <td colspan="6" class="upperLine"><textarea type="text" cols="80" rows="1"></textarea> </td>
+                            <td rowspan="2" class="rightLine lowerLine upperLine"> </td>
+                        </tr>
+                        <tr>
+                            <td class="lowerLine">Functionaris:</td>
+                            <td colspan="6" class="lowerLine" ><textarea type="text" cols="80" rows="1"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </div>
+                  <!--start of the bevindingen section-->
+                    <br>
                     <tr>
                         <td rowspan="16" class="upperLine lowerLine leftLine"><b>Bevindingen</b></td>
                         <td colspan="2" class="upperLine"> Tekortkomingen A of B:</td>
