@@ -84,7 +84,7 @@
 <!DOCTYPE html>
 <HTML>
     <head>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="stylesheet/stylesheet.css">
         <title>taak_2_rood</title>
     </head>
     <body id="red">
@@ -213,15 +213,32 @@
                             // loop thru the complex array                      
                             foreach($aDatabase as $iKey =>$aContentArray) {                         //execute the following for every entry in the database
                                 echo("<tr><td class='data'>$iKey</td>           
-                                    <td class='data'>.$aContentArray[0].</td>
-                                    <td class='data'>.$aContentArray[1].</td>
-                                    <td class='data'>.$aContentArray[2].</td>
-                                    <td class='data'>.$aContentArray[3].</td>
-                                    <td class='data'>.$aContentArray[4].</td>
-                                    <td class='data'>.$aContentArray[5].</td>
-                                    <td class='data'>.$aContentArray[6].</td>
-                                    <td class='data'>.$aContentArray[7].</td>
-                                    </tr>");                                                        //input the content of the database entry into a row
+                                    <td class='data'>$aContentArray[0]</td>
+                                    <td class='data'>$aContentArray[1]</td>
+                                    <td class='data'>$aContentArray[2]</td>
+                                    <td class='data'>$aContentArray[3]</td>
+                                    <td class='data'>$aContentArray[4]</td>
+                                    <td class='data'>$aContentArray[5]</td>
+                                    <td class='data'>$aContentArray[6]</td>
+                                    <td class='data'>$aContentArray[7]</td>
+                                    <td class='data'>$aContentArray[8]</td>
+                                    <td class='data'>$aContentArray[9]</td>
+                                    <td class='data'>$aContentArray[10]</td>
+                                    <td class='data'>$aContentArray[11]</td>
+                                    <td class='data'>$aContentArray[12]</td>
+                                    <td class='data'>$aContentArray[13]</td>
+                                    <td class='data'>$aContentArray[14]</td>
+                                    <td class='data'>$aContentArray[15]</td>");
+                                if($aContentArray[16] = "TRUE"){
+                                    echo("<td class='data'>X</td>
+                                        <td class='data'></td>
+                                        </tr>");                                                            //input the content of the database entry into a row
+                                }
+                                else{
+                                    echo("<td class='data'></td>
+                                        <td class='data'>X</td>
+                                        </tr>");                                                            //input the content of the database entry into a row
+                                }
                             }
                         }
                     ?>                                                                              <!--end of the php part-->

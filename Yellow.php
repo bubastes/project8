@@ -97,7 +97,7 @@
 <!DOCTYPE html>
 <HTML>
     <head>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="stylesheet/stylesheet.css">
         <title>taak_2_geel</title>
     </head>
     <body id="yellow">

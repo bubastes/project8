@@ -1,0 +1,253 @@
+:root {
+    --color1:   #ffffff;
+    --color2:   #dddddd;
+    --color3:   #bbbbbb;
+    --color4:   #eeeeee;
+    --color5:   #ffcccc;
+    --color6:   #ffffcc;
+    --colYes:   #88ff88;
+    --colNo:    #ff8888;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 38px;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 38px;
+}
+
+td {
+    height: 205px;
+}
+
+#red {
+    background-color: var(--color5);
+}
+
+#red .form {
+    background-color: var(--color4);
+}
+
+#red .data .Yes {
+    background-color: var(--colYes);
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+#red .data .No {
+    background-color: var(--colNo);
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+#red .data table, #red .data .data {
+    border: 0.1px solid #000000;
+}
+
+#red .data .blockLine {
+    border: 1px solid black;
+    background-color: var(--color3);
+}
+
+#red .data .upperBlockLine {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .data .centerBlockLine {
+    border: 1px solid #000000;
+    border-top: 1px solid #00000000;
+    border-bottom: none;
+    background-color: var(--color3);
+}
+
+#red .data .lowerBlockLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .data .Numbering {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color2);
+}
+
+.scroll {
+    overflow-x: auto;
+    overflow-y: none;
+    margin: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+#yellow {
+    background-color: var(--color6);
+}
+
+#yellow .form {
+    background-color: var(--color4);
+}
+
+#yellow .data table, #yellow .data .data {
+    border: 1px solid #000000;
+}
+
+#yellow .data .blockLine {
+    border: 1px solid black;
+    background-color: var(--color3);
+}
+
+#yellow .data .upperBlockLine {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#yellow .data .centerBlockLine {
+    border: 1px solid #000000;
+    border-top: 1px solid #00000000;
+    border-bottom: none;
+    background-color: var(--color3);
+}
+
+#yellow .data .lowerBlockLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+#red .form .blockLine {
+    border: 1px solid black;
+    background-color: var(--color3);
+}
+
+#red .form .upperLine {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .form .leftLine {
+    border: 1px solid #000000;
+    border-top: 1px solid #00000000;
+    border-bottom: none;
+    background-color: var(--color3);
+}
+
+#red .form .lowerLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .form .rightLine {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color3);
+}
+
+#red .data .Numbering {
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    background-color: var(--color2);
+}
+
+#yellow .scroll {
+    overflow-x: auto;
+    overflow-y: none;
+    margin: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+#yellow .column1 {
+    width: 10%;
+}
+
+#yellow td {
+    border: 1px;
+    width: 15%;
+    height: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.box {
+    border: 1px;
+}
+
+.empty_space {
+    height: 300px;
+}
+
+#yellow .form .blockLine {
+    border: 1px solid black;
+}
+
+#yellow .form .upperLine {
+    border-top: 1px solid #000000;
+}
+
+#yellow .form .leftLine {
+    border-left: 1px solid #000000;
+}
+
+#yellow .form .lowerLine {
+    border-bottom: 1px solid #000000;
+}
+
+#yellow .form .rightLine {
+    border-right: 1px solid #000000;
+}
+
+table, tr, td{
+    border-color: black;
+}
+th{
+    border-top : 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.the-world{
+    background-color: lightsteelblue;
+}
+
+#navbar {
+    width: 101%;
+    height: 13.5%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--aColor6);
+    margin-bottom: 10px;
+    z-index: 5;
+}
+
+#navbar a {
+    height: 50%;
+    color: var(--aColor1);
+}
+
+#navbar a:hover {
+    color: var(--aColor1);
+}
+
+#navbar #selected {
+    background-color: var(--aColor4)
+}

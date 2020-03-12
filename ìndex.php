@@ -12,7 +12,7 @@ date last change:	5-3-2020
 
 <html>
 <head>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="styleet/stylesheet.css">
 </head>
 <body>
     <div padding="0px" margin="0px" style="width:5%;"></div>
