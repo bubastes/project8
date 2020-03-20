@@ -51,22 +51,25 @@
     }
 
     if(!empty($_POST)){
-        var_dump($_POST);
+        // var_dump($_POST);
         $dDate                              = $_POST['dDate'];
         $sUitgevoerd                        = $_POST['sUitgevoerd'];
         $sDeskundige                        = $_POST['sDeskundige'];
 
-        $aCheckboxes = array("bHaakhoogte","bTeleskoopgiek_delen","bGieklengte_m","bOpbouwgiek_m","bTopbaar_gr","bHulpgiek_m","bMet_loopkat","bRailstellen",
-        "bKniklek","bWendbare_giek","bRijdend","bMonogiek","bStationair","bfly_jib_delen","bIngietframe","bStempels","bVrijstaand","bDozerblad","bOpTruck",
-        "bWegRuwterijn","bOpRupsen","bTekortkomingen");
+        $aCheckboxes = array("bTeleskoopgiek_delen","bGieklengte_m","bOpbouwgiek_m","bTopbaar_gr","bHulpgiek_m","bMet_loopkat","bRailstellen","bKniklek",
+        "bWendbare_giek","bRijdend","bMonogiek","sMonogiek","bStationair","bfly_jib_delen","ifly_jib_delen","bIngietframe","bStempels","bVrijstaand",
+        "bDozerblad","bZelfrijdend","bOpTruck","bWegRuwterijn","bOpRupsen","bTekortkomingen");
         $aBooleansCheackboxes = array();
         foreach($aCheckboxes as $sCheckboxName){
+            echo($_POST[$sCheckboxName]."<br>");
             if(!empty($_POST[$sCheckboxName])){
-                $aBooleansCheackboxes[$sCheckboxName]  = TRUE;
+            //     $aBooleansCheackboxes[$sCheckboxName]  = "TRUE";
             }else{
-                $aBooleansCheackboxes[$sCheckboxName]  = FALSE;
+            //     $aBooleansCheackboxes[$sCheckboxName]  = "FALSE";
             }
         } // End foreach
+        $iOpdrachtNummer                    = $_POST['iOpdrachtNummer'];
+        $iTCTV_Number                       = $_POST['iTCTV_Number'];
         // $bTeleskoopgiek_delen               = $_POST['bTeleskoopgiek_delen'];
         // $bGieklengte_m                      = $_POST['bGieklengte_m'];
         // $bOpbouwgiek_m                      = $_POST['bOpbouwgiek_m'];
@@ -107,12 +110,14 @@
         $aDatabase = LoadArray();
         $iRecordCounter = count($aDatabase);
         // 
-        $aDatabase[$iRecordCounter] = array($dDate,$sUitgevoerd,$sDeskundige,/*$aBooleansCheackboxes[0],$aBooleansCheackboxes[1],$aBooleansCheackboxes[2],
+        $aDatabase[$iRecordCounter] = array($iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$aBooleansCheackboxes[0],$aBooleansCheackboxes[1],
+        $aBooleansCheackboxes[2],
         $aBooleansCheackboxes[3],$aBooleansCheackboxes[4],$aBooleansCheackboxes[5],$aBooleansCheackboxes[6],$aBooleansCheackboxes[7],$aBooleansCheackboxes[8],
         $aBooleansCheackboxes[7],$aBooleansCheackboxes[9],$aBooleansCheackboxes[10],$aBooleansCheackboxes[11],$aBooleansCheackboxes[12],$aBooleansCheackboxes[13],
         $aBooleansCheackboxes[14],$aBooleansCheackboxes[15],$aBooleansCheackboxes[16],$aBooleansCheackboxes[17],$aBooleansCheackboxes[18],
-        $aBooleansCheackboxes[19],$aBooleansCheackboxes[20],*/$ifly_jib_delen,$iHijskraanFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,
-        $iOnderwagenFabrikant,$iOnderwagenFabrikant,$dAfmeldenVoor,$sDirecte_voorzieningen,$sToelichting);
+        $aBooleansCheackboxes[19],$aBooleansCheackboxes[20],$aBooleansCheackboxes[21],$aBooleansCheackboxes[22],$aBooleansCheackboxes[23],
+        $ifly_jib_delen,$iHijskraanFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$dAfmeldenVoor,
+        $sDirecte_voorzieningen,$sToelichting);
         // save the array to a file
         SaveArray($aDatabase);
     }
@@ -126,7 +131,7 @@
 <HTML>
     <head>
         <link rel="stylesheet" href="stylesheet/stylesheet.css">
-        <title>taak_2_geel</title>
+        <title>taak_4_groen</title>
     </head>
     <body id="yellow">
         <!--the content of the page-->
@@ -215,7 +220,7 @@
                         <td colspan="7" class="upperLine rightLine"></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="bZelfrijdend">op banden (zelfrijdend)</td>                                 <!--from green-->
+                        <td><input type="checkbox" name="bZelfrijdend" value="TRUE">op banden (zelfrijdend)</td>                                 <!--from green-->
                         <td><input type="checkbox" name="bHaakhoogte_m"> haakhoogte (__m) </td>
                         <td align="right"><input type="number"></td>
                         <td colspan="7" class="rightLine"></td>
@@ -294,8 +299,8 @@
                         <td rowspan="7" class="upperLine lowerLine leftLine"><b>Bevindingen</b></td>
                         <td colspan="2" class="upperLine"> Tekortkomingen A of B:</td>
                         <td class="upperLine">
-                            <input type="radio" name="bTekortkomingen">ja
-                            <input type="radio" name="bTekortkomingen" class="upperLine">nee
+                            <input type="radio" name="bTekortkomingen" value="TRUE">ja
+                            <input type="radio" name="bTekortkomingen" value="FALSE" class="upperLine">nee
                             <td colspan="6" class="upperLine rightLine"></td>
                         </td>
                     </tr>

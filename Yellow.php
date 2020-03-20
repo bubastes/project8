@@ -41,50 +41,83 @@
         // var_dump($aReadArray);
 
     }
-    
-    // $iOpdrachtNummer = "";
-    // $iTCTV_Number = "";
-    // $dDate = "";
-    // $sUitgevoerd = "";
-    // $sDeskundige = "";
-    // $dAfmeldenVoor = "";
-    // $sDirecte_voorzieningen = "";
-    // $sDirecte_voorzieningen = "";
+
+    // clears the database file
+    function CreatArray()
+    {
+        $file = fopen('database.json', 'w');
+        file_put_contents('');
+        fclose($file);
+    }
 
     if(!empty($_POST)){
-        $dDate                              =$_post['dDate'];
-        $sUitgevoerd                        =$_post['sUitgevoerd'];
-        $sDeskundige                        =$_post['sDeskundige'];
-        $bHaakhoogte_m                      =$_post['bHaakhoogte_m'];
-        $bTeleskoopgiek_delen               =$_post['bTeleskoopgiek_delen'];
-        $bGieklengte_m                      =$_post['bGieklengte_m'];
-        $bOpbouwgiek_m                      =$_post['bOpbouwgiek_m'];
-        $bTopbaar_gr                        =$_post['bTopbaar_gr'];
-        $bHulpgiek_m                        =$_post['bHulpgiek_m'];
-        $bMet_loopkat                       =$_post['bMet_loopkat'];
-        $bRailstellen                       =$_post['bRailstellen'];
-        $bKniklek                           =$_post['bKniklek'];
-        $bWendbare_giek                     =$_post['bWendbare_giek'];
-        $bRijdend                           =$_post['bRijdend'];
-        $bMonogiek                          =$_post['bMonogiek'];
-        $sMonogiek                          =$_post['sMonogiek'];
-        $bStationair                        =$_post['bStationair'];
-        $bfly_jib_delen                     =$_post['bfly_jib_delen'];
-        $ifly_jib_delen                     =$_post['ifly_jib_delen'];
-        $bIngietframe                       =$_post['bIngietframe'];
-        $bStempels                          =$_post['bStempels'];
-        $bVrijstaand                        =$_post['bVrijstaand'];
-        $bDozerblad                         =$_post['bDozerblad'];
-        $bTekortkomingen                    =$_post['bTekortkomingen'];
-        $dAfmeldenVoor                      =$_post['dAfmeldenVoor'];
-        $sDirecte_voorzieningen             =$_post['sDirecte_voorzieningen'];
-        $sToelichting                       =$_post['sToelichting'];
+        // var_dump($_POST);
+        $dDate                              = $_POST['dDate'];
+        $sUitgevoerd                        = $_POST['sUitgevoerd'];
+        $sDeskundige                        = $_POST['sDeskundige'];
+
+        $aCheckboxes = array("bTeleskoopgiek_delen","bGieklengte_m","bOpbouwgiek_m","bTopbaar_gr","bHulpgiek_m","bMet_loopkat","bRailstellen","bKniklek",
+        "bWendbare_giek","bRijdend","bMonogiek","sMonogiek","bStationair","bfly_jib_delen","ifly_jib_delen","bIngietframe","bStempels","bVrijstaand",
+        "bDozerblad","bZelfrijdend","bOpTruck","bWegRuwterijn","bOpRupsen","bTekortkomingen");
+        $aBooleansCheackboxes = array();
+        foreach($aCheckboxes as $sCheckboxName){
+            echo($_POST[$sCheckboxName]."<br>");
+            if(!empty($_POST[$sCheckboxName])){
+            //     $aBooleansCheackboxes[$sCheckboxName]  = "TRUE";
+            }else{
+            //     $aBooleansCheackboxes[$sCheckboxName]  = "FALSE";
+            }
+        } // End foreach
+        $iOpdrachtNummer                    = $_POST['iOpdrachtNummer'];
+        $iTCTV_Number                       = $_POST['iTCTV_Number'];
+        // $bTeleskoopgiek_delen               = $_POST['bTeleskoopgiek_delen'];
+        // $bGieklengte_m                      = $_POST['bGieklengte_m'];
+        // $bOpbouwgiek_m                      = $_POST['bOpbouwgiek_m'];
+        // $bTopbaar_gr                        = $_POST['bTopbaar_gr'];
+        // $bHulpgiek_m                        = $_POST['bHulpgiek_m'];
+        // $bMet_loopkat                       = $_POST['bMet_loopkat'];
+        // $bRailstellen                       = $_POST['bRailstellen'];
+        // $bKniklek                           = $_POST['bKniklek'];
+        // $bWendbare_giek                     = $_POST['bWendbare_giek'];
+        // $bRijdend                           = $_POST['bRijdend'];
+        // $bMonogiek                          = $_POST['bMonogiek'];
+        // $sMonogiek                          = $_POST['sMonogiek'];
+        // $bStationair                        = $_POST['bStationair'];
+        // $bfly_jib_delen                     = $_POST['bfly_jib_delen'];
+        // $ifly_jib_delen                     = $_POST['ifly_jib_delen'];
+        // $bIngietframe                       = $_POST['bIngietframe'];
+        // $bStempels                          = $_POST['bStempels'];
+        // $bVrijstaand                        = $_POST['bVrijstaand'];
+        // $bDozerblad                         = $_POST['bDozerblad'];
+
+        $iHijskraanFabrikant                = $_POST['iHijskraanFabrikant'];
+        $iOnderwagenFabrikant               = $_POST['iOnderwagenFabrikant'];
+        $iOnderwagenFabrikant               = $_POST['iOnderwagenFabrikant'];
+        $iOnderwagenFabrikant               = $_POST['iOnderwagenFabrikant'];
+        $iOnderwagenFabrikant               = $_POST['iOnderwagenFabrikant'];
+        
+        // $bZelfrijdend                       = $_POST['bZelfrijdend'];
+        // $bOpTruck                           = $_POST['bOpTruck'];
+        // $bWegRuwterijn                      = $_POST['bWegRuwterijn'];
+        // $bOpRupsen                          = $_POST['bOpRupsen'];
+
+        // $bTekortkomingen                    = $_POST['bTekortkomingen'];
+        $dAfmeldenVoor                      = $_POST['dAfmeldenVoor'];
+        $sDirecte_voorzieningen             = $_POST['sDirecte_voorzieningen'];
+        $sToelichting                       = $_POST['sToelichting'];
         
         // load the database
         $aDatabase = LoadArray();
         $iRecordCounter = count($aDatabase);
         // 
-        $aDatabase[$iRecordCounter] = array($iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$dAfmeldenVoor,$sDirecte_voorzieningen,$sDirecte_voorzieningen);
+        $aDatabase[$iRecordCounter] = array($iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$aBooleansCheackboxes[0],$aBooleansCheackboxes[1],
+        $aBooleansCheackboxes[2],
+        $aBooleansCheackboxes[3],$aBooleansCheackboxes[4],$aBooleansCheackboxes[5],$aBooleansCheackboxes[6],$aBooleansCheackboxes[7],$aBooleansCheackboxes[8],
+        $aBooleansCheackboxes[7],$aBooleansCheackboxes[9],$aBooleansCheackboxes[10],$aBooleansCheackboxes[11],$aBooleansCheackboxes[12],$aBooleansCheackboxes[13],
+        $aBooleansCheackboxes[14],$aBooleansCheackboxes[15],$aBooleansCheackboxes[16],$aBooleansCheackboxes[17],$aBooleansCheackboxes[18],
+        $aBooleansCheackboxes[19],$aBooleansCheackboxes[20],$aBooleansCheackboxes[21],$aBooleansCheackboxes[22],$aBooleansCheackboxes[23],
+        $ifly_jib_delen,$iHijskraanFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$iOnderwagenFabrikant,$dAfmeldenVoor,
+        $sDirecte_voorzieningen,$sToelichting);
         // save the array to a file
         SaveArray($aDatabase);
     }
@@ -98,7 +131,7 @@
 <HTML>
     <head>
         <link rel="stylesheet" href="stylesheet/stylesheet.css">
-        <title>keuringsrapport</title>
+        <title>taak_4_groen</title>
     </head>
     <body id="yellow">
         <!--the content of the page-->
@@ -108,35 +141,74 @@
                 <h1>Periodieke keuring voorblad keuringsrapport</h1>
                 <!--the lineles field containing opdrachtnummer and TCVT-nummer-->
                 <table width="100%" cellspacing="0">
-                    <div class="box">
-                        <tr>
-                            <td class="column1">Opdrachtnummer:</td>
-                            <td align="right"><input type="number" name="iOpdrachtNummer"></p></td>
-                            <td colspan="2"></td>
-                            <td>TCVT-nummer:</td>
-                            <td colspan="2" align="right"><input type="number" name="iTCTV_Number"></p></td>
-                        </tr>
-                        <tr>
-                            <td colspan="7"></td>
-                        </tr>
-                    </div>
+                    <tr>
+                        <td class="column1">Opdrachtnummer:</td>
+                        <td align="right"><input type="number" name="iOpdrachtNummer"></p></td>
+                        <td colspan="2"></td>
+                        <td>TCVT-nummer:</td>
+                        <td colspan="2" align="right"><input type="number" name="iTCTV_Number"></p></td>
+                    </tr>
                     <!--end of this section-->
-                    <br>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
                     <!--the section named: Keuring-->
-                    <div class="box">
-                        <tr>
-                            <td rowspan="2" class="column1 upperLine leftLine lowerLine">Keuring </td>
-                            <td class="upperLine">Keurings datum:</td>
-                            <td align="right" class="upperLine"><input type="date" name="dDate"></td>
-                            <td colspan="4" class="upperLine rightLine">
-                        </tr>
-                        <tr>
-                            <td class="lowerLine">Uitgevoerd door:</td>
-                            <td align="right" class="lowerLine"><input type="text" name="sUitgevoerd"></td>
-                            <td class="lowerLine"></td>
-                            <td class="lowerLine">deskundige:</td>
-                            <td colspan="2" align="right" class="lowerLine rightLine"><input type="text" name="sDeskundige"></td>
-                        </tr>
+                    <tr>
+                        <td rowspan="2" class="column1 upperLine leftLine lowerLine">Keuring </td>
+                        <td class="upperLine">Keurings datum:</td>
+                        <td align="right" class="upperLine"><input type="date" name="dDate"></td>
+                        <td colspan="4" class="upperLine rightLine">
+                    </tr>
+                    <tr>
+                        <td class="lowerLine">Uitgevoerd door:</td>
+                        <td align="right" class="lowerLine"><input type="text" name="sUitgevoerd"></td>
+                        <td class="lowerLine"></td>
+                        <td class="lowerLine">deskundige:</td>
+                        <td colspan="2" align="right" class="lowerLine rightLine"><input type="text" name="sDeskundige"></td>
+                    </tr>
+                    <!--end of this section-->
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    <!--the section named: materieel-->
+                    <tr>
+                        <td rowspan="6" class="upperLine leftLine lowerLine"><b>Materieel</b></td>
+                        <td colspan="2" class="upperLine"><b>Hijskraan</b></td>
+                        <td colspan="2" class="upperLine"><b>Onderwagen</b></td>
+                        <td class="upperLine"></td>
+                        <td rowspan="6" class="upperLine rightLine lowerLine"></td>
+                    </tr>
+                    <tr>
+                        <td>fabrikant:</td>
+                        <td><input type="text" name="iHijskraanFabrikant"></td>
+                        <td colspan="2">fabrikant:</td>
+                        <td><input type="text" name="iOnderwagenFabrikant"></td>
+                    </tr>
+                    <tr>
+                        <td>Module / type</td>
+                        <td><input type="text" name="iHijskraanModule"></td>
+                        <td colspan="2">Module / type</td>
+                        <td><input type="text" name="iOnderwagenModule"></td>
+                    </tr>
+                    <tr>
+                        <td>Serienummer:</td>
+                        <td><input type="text" name="iHijskraanSerienummer"></td>
+                        <td colspan="2">Serienummer:</td>
+                        <td><input type="text" name="iOnderwagenSerienummer"></td>
+                    </tr>
+                    <tr>
+                        <td>Bedrijfsnummer:</td>
+                        <td><input type="text" name="iHijskraanBedrijfsnummer"></td>
+                        <td colspan="2">Bedrijfsnummer:</td>
+                        <td><input type="text" name="iOnderwagenBedrijfsnummer"></td>
+                    </tr>
+                    <tr>
+                        <td class="lowerLine">Bouwjaar:</td>
+                        <td class="lowerLine"><input type="text" name="iHijskraanBouwjaar"></td>
+                        <td class="lowerLine" colspan="2"></td>
+                        <td class="lowerLine"><input type="text" name="iOnderwagenBouwjaar"></td>
+                    </tr>
+                    <!--end of this section-->
                         <tr>
                             <td colspan="7"> </td>
                         </tr>

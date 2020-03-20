@@ -186,25 +186,25 @@
                     </tr>
                     <!--row number 1-->
                     <tr class="Numbering">
-                        <th class="Numbering"id="place1">1</th>                                     <!--ranking-->
-                        <td class="data" id="1.1">#</td>                                            <!--opgesteld op: banden-->
-                        <td class="data" id="1.2">#</td>                                            <!--opgesteld op: stempels-->
-                        <td class="data" id="1.3">#</td>                                            <!--opgesteld op: rupsen-->
-                        <td class="data" id="1.4">#</td>                                            <!--gieklengte hoofdgiek-->
-                        <td class="data" id="1.5">#</td>                                            <!--gieklengte mechanische sectie-->
-                        <td class="data" id="1.6">#</td>                                            <!--gieklengte hulpgiek-->
-                        <td class="data" id="1.7">#</td>                                            <!--gieklengte totale gieklengte-->
-                        <td class="data" id="1.8">#</td>                                            <!--giekhoek hoofdgiek-->
-                        <td class="data" id="1.9">#</td>                                            <!--giekhoek hulpgiek-->
-                        <td class="data" id="1.10">#</td>                                           <!--giekhoek aantal hijskabels-->
-                        <td class="data" id="1.11">#</td>                                           <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
-                        <td class="data" id="1.12">#</td>                                           <!--zwenkhoek eigen massa balast LMB code t-->
-                        <td class="data" id="1.13">#</td>                                           <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
-                        <td class="data" id="1.14">#</td>                                           <!--zwenkhoek LMB treedt in werking bij:-->
-                        <td class="data" id="1.15">#</td>                                           <!--beproeving proeflast-->
-                        <td class="data" id="1.16">#</td>                                           <!--beproeving afwijking in %-->
-                        <td class="data" id="1.17">#</td>                                           <!--akkoord ja-->
-                        <td class="data" id="1.18">#</td>                                           <!--akkoord nee-->
+                        <th class="Numbering">1</th>                                      <!--ranking-->
+                        <td class="data">#</td>                                           <!--opgesteld op: banden-->
+                        <td class="data">#</td>                                           <!--opgesteld op: stempels-->
+                        <td class="data">#</td>                                           <!--opgesteld op: rupsen-->
+                        <td class="data">#</td>                                           <!--gieklengte hoofdgiek-->
+                        <td class="data">#</td>                                           <!--gieklengte mechanische sectie-->
+                        <td class="data">#</td>                                           <!--gieklengte hulpgiek-->
+                        <td class="data">#</td>                                           <!--gieklengte totale gieklengte-->
+                        <td class="data">#</td>                                           <!--giekhoek hoofdgiek-->
+                        <td class="data">#</td>                                           <!--giekhoek hulpgiek-->
+                        <td class="data">#</td>                                           <!--giekhoek aantal hijskabels-->
+                        <td class="data">#</td>                                           <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
+                        <td class="data">#</td>                                           <!--zwenkhoek eigen massa balast LMB code t-->
+                        <td class="data">#</td>                                           <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
+                        <td class="data">#</td>                                           <!--zwenkhoek LMB treedt in werking bij:-->
+                        <td class="data">#</td>                                           <!--beproeving proeflast-->
+                        <td class="data">#</td>                                           <!--beproeving afwijking in %-->
+                        <td class="data">#</td>                                           <!--akkoord ja-->
+                        <td class="data">#</td>                                           <!--akkoord nee-->
                     </tr>
                     <!--row number 2-->
                     <?php                                                                           //php database input
@@ -212,31 +212,37 @@
                             $aDatabase = LoadArray();                                               //load the database
                             // loop thru the complex array                      
                             foreach($aDatabase as $iKey =>$aContentArray) {                         //execute the following for every entry in the database
-                                echo("<tr><td class='data'>$iKey</td>           
-                                    <td class='data'>$aContentArray[0]</td>
-                                    <td class='data'>$aContentArray[1]</td>
-                                    <td class='data'>$aContentArray[2]</td>
-                                    <td class='data'>$aContentArray[3]</td>
-                                    <td class='data'>$aContentArray[4]</td>
-                                    <td class='data'>$aContentArray[5]</td>
-                                    <td class='data'>$aContentArray[6]</td>
-                                    <td class='data'>$aContentArray[7]</td>
-                                    <td class='data'>$aContentArray[8]</td>
-                                    <td class='data'>$aContentArray[9]</td>
-                                    <td class='data'>$aContentArray[10]</td>
-                                    <td class='data'>$aContentArray[11]</td>
-                                    <td class='data'>$aContentArray[12]</td>
-                                    <td class='data'>$aContentArray[13]</td>
-                                    <td class='data'>$aContentArray[14]</td>
-                                    <td class='data'>$aContentArray[15]</td>");
-                                if($aContentArray[16] = "TRUE"){
-                                    echo("<td class='data'>X</td>
-                                        <td class='data'></td>
+                                echo("<tr><th class='Numbering'>".$iKey."</th>              <!--ranking--> 
+                                    <td class='data'>".$aContentArray[0]."</td>             <!--opgesteld op: banden-->
+                                    <td class='data'>".$aContentArray[1]."</td>             <!--opgesteld op: stempels-->
+                                    <td class='data'>".$aContentArray[2]."</td>             <!--opgesteld op: rupsen-->
+                                    <td class='data'>".$aContentArray[3]."</td>             <!--gieklengte hoofdgiek-->
+                                    <td class='data'>".$aContentArray[4]."</td>             <!--gieklengte mechanische sectie-->
+                                    <td class='data'>".$aContentArray[5]."</td>             <!--gieklengte hulpgiek-->
+                                    <td class='data'>".$aContentArray[6]."</td>             <!--gieklengte totale gieklengte-->
+                                    <td class='data'>".$aContentArray[7]."</td>             <!--giekhoek hoofdgiek-->
+                                    <td class='data'>".$aContentArray[8]."</td>             <!--giekhoek hulpgiek-->
+                                    <td class='data'>".$aContentArray[9]."</td>             <!--giekhoek aantal hijskabels-->
+                                    <td class='data'>".$aContentArray[10]."</td>            <!--zwenkhoek r= 360, a= achter-, z= zij, v= voorsector-->
+                                    <td class='data'>".$aContentArray[11]."</td>            <!--zwenkhoek eigen massa balast LMB code t-->
+                                    <td class='data'>".$aContentArray[12]."</td>            <!--zwenkhoek toelaatbare bedrijfslast bij in werking-->
+                                    <td class='data'>".$aContentArray[13]."</td>            <!--zwenkhoek LMB treedt in werking bij:-->
+                                    <td class='data'>".$aContentArray[14]."</td>            <!--beproeving proeflast-->
+                                    <td class='data'>".$aContentArray[15]."</td>            <!--beproeving afwijking in %-->
+                                    ");
+                                if($aContentArray[19] = "TRUE"){                          
+                                    echo("<td class='data'>X</td                            <!--akkoord ja-->
+                                        <td class='data'></td>                              <!--akkoord nee-->
                                         </tr>");                                                            //input the content of the database entry into a row
                                 }
+                                elseif($aContentArray[19] = "FALSE"){
+                                    echo("<td class='data'></td>                            <!--akkoord ja-->
+                                        <td class='data'>X</td>                             <!--akkoord nee-->
+                                        </tr>");                                                            //input the content of the database entry into a row
+                                    }
                                 else{
-                                    echo("<td class='data'></td>
-                                        <td class='data'>X</td>
+                                    echo("<td class='data'>ERROR</td>                       <!--akkoord ja-->
+                                        <td class='data'>ERROR</td>                         <!--akkoord nee-->
                                         </tr>");                                                            //input the content of the database entry into a row
                                 }
                             }
