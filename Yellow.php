@@ -51,43 +51,43 @@
     // $sDirecte_voorzieningen = "";
     // $sDirecte_voorzieningen = "";
 
-    if(!empty($_POST)){
-        $dDate                              =$_post['dDate'];
-        $sUitgevoerd                        =$_post['sUitgevoerd'];
-        $sDeskundige                        =$_post['sDeskundige'];
-        $bHaakhoogte_m                      =$_post['bHaakhoogte_m'];
-        $bTeleskoopgiek_delen               =$_post['bTeleskoopgiek_delen'];
-        $bGieklengte_m                      =$_post['bGieklengte_m'];
-        $bOpbouwgiek_m                      =$_post['bOpbouwgiek_m'];
-        $bTopbaar_gr                        =$_post['bTopbaar_gr'];
-        $bHulpgiek_m                        =$_post['bHulpgiek_m'];
-        $bMet_loopkat                       =$_post['bMet_loopkat'];
-        $bRailstellen                       =$_post['bRailstellen'];
-        $bKniklek                           =$_post['bKniklek'];
-        $bWendbare_giek                     =$_post['bWendbare_giek'];
-        $bRijdend                           =$_post['bRijdend'];
-        $bMonogiek                          =$_post['bMonogiek'];
-        $sMonogiek                          =$_post['sMonogiek'];
-        $bStationair                        =$_post['bStationair'];
-        $bfly_jib_delen                     =$_post['bfly_jib_delen'];
-        $ifly_jib_delen                     =$_post['ifly_jib_delen'];
-        $bIngietframe                       =$_post['bIngietframe'];
-        $bStempels                          =$_post['bStempels'];
-        $bVrijstaand                        =$_post['bVrijstaand'];
-        $bDozerblad                         =$_post['bDozerblad'];
-        $bTekortkomingen                    =$_post['bTekortkomingen'];
-        $dAfmeldenVoor                      =$_post['dAfmeldenVoor'];
-        $sDirecte_voorzieningen             =$_post['sDirecte_voorzieningen'];
-        $sToelichting                       =$_post['sToelichting'];
+    // if(!empty($_POST)){
+    //     $dDate                              =$_post['dDate'];
+    //     $sUitgevoerd                        =$_post['sUitgevoerd'];
+    //     $sDeskundige                        =$_post['sDeskundige'];
+    //     $bHaakhoogte_m                      =$_post['bHaakhoogte_m'];
+    //     $bTeleskoopgiek_delen               =$_post['bTeleskoopgiek_delen'];
+    //     $bGieklengte_m                      =$_post['bGieklengte_m'];
+    //     $bOpbouwgiek_m                      =$_post['bOpbouwgiek_m'];
+    //     $bTopbaar_gr                        =$_post['bTopbaar_gr'];
+    //     $bHulpgiek_m                        =$_post['bHulpgiek_m'];
+    //     $bMet_loopkat                       =$_post['bMet_loopkat'];
+    //     $bRailstellen                       =$_post['bRailstellen'];
+    //     $bKniklek                           =$_post['bKniklek'];
+    //     $bWendbare_giek                     =$_post['bWendbare_giek'];
+    //     $bRijdend                           =$_post['bRijdend'];
+    //     $bMonogiek                          =$_post['bMonogiek'];
+    //     $sMonogiek                          =$_post['sMonogiek'];
+    //     $bStationair                        =$_post['bStationair'];
+    //     $bfly_jib_delen                     =$_post['bfly_jib_delen'];
+    //     $ifly_jib_delen                     =$_post['ifly_jib_delen'];
+    //     $bIngietframe                       =$_post['bIngietframe'];
+    //     $bStempels                          =$_post['bStempels'];
+    //     $bVrijstaand                        =$_post['bVrijstaand'];
+    //     $bDozerblad                         =$_post['bDozerblad'];
+    //     $bTekortkomingen                    =$_post['bTekortkomingen'];
+    //     $dAfmeldenVoor                      =$_post['dAfmeldenVoor'];
+    //     $sDirecte_voorzieningen             =$_post['sDirecte_voorzieningen'];
+    //     $sToelichting                       =$_post['sToelichting'];
         
-        // load the database
-        $aDatabase = LoadArray();
-        $iRecordCounter = count($aDatabase);
-        // 
-        $aDatabase[$iRecordCounter] = array($iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$dAfmeldenVoor,$sDirecte_voorzieningen,$sDirecte_voorzieningen);
-        // save the array to a file
-        SaveArray($aDatabase);
-    }
+    //     // load the database
+    //     $aDatabase = LoadArray();
+    //     $iRecordCounter = count($aDatabase);
+    //     // 
+    //     $aDatabase[$iRecordCounter] = array($iOpdrachtNummer,$iTCTV_Number,$dDate,$sUitgevoerd,$sDeskundige,$dAfmeldenVoor,$sDirecte_voorzieningen,$sDirecte_voorzieningen);
+    //     // save the array to a file
+    //     SaveArray($aDatabase);
+    // }
     
     function clearPost() {
         unset($_POST['']);
@@ -98,7 +98,7 @@
 <HTML>
     <head>
         <link rel="stylesheet" href="stylesheet/stylesheet.css">
-        <title>taak_2_geel</title>
+        <title>taak_3_geel</title>
     </head>
     <body id="yellow">
         <!--the content of the page-->
