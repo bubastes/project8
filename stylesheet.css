@@ -16,12 +16,6 @@ input::-webkit-inner-spin-button {
   width: 38px;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-  width: 38px;
-}
-
 td {
     height: 205px;
 }
